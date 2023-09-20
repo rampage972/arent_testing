@@ -1,49 +1,120 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+* {
+	font-family: Inter;
+	font-weight: 400;
+}
+
 @media (min-width: 768px) {
-  .animate {
-    animation-duration: 0.3s;
-    -webkit-animation-duration: 0.3s;
-    animation-fill-mode: both;
-    -webkit-animation-fill-mode: both;
-  }
+	.animate {
+		animation-duration: 0.3s;
+		-webkit-animation-duration: 0.3s;
+		animation-fill-mode: both;
+		-webkit-animation-fill-mode: both;
+	}
 }
 
 @keyframes slideIn {
-  0% {
-    transform: translateY(1rem);
-    opacity: 0;
-  }
+	0% {
+		transform: translateY(1rem);
+		opacity: 0;
+	}
 
-  100% {
-    transform: translateY(0rem);
-    opacity: 1;
-  }
+	100% {
+		transform: translateY(0rem);
+		opacity: 1;
+	}
 
-  0% {
-    transform: translateY(1rem);
-    opacity: 0;
-  }
+	0% {
+		transform: translateY(1rem);
+		opacity: 0;
+	}
 }
 
 @-webkit-keyframes slideIn {
-  0% {
-    -webkit-transform: transform;
-    -webkit-opacity: 0;
-  }
+	0% {
+		-webkit-transform: transform;
+		-webkit-opacity: 0;
+	}
 
-  100% {
-    -webkit-transform: translateY(0);
-    -webkit-opacity: 1;
-  }
+	100% {
+		-webkit-transform: translateY(0);
+		-webkit-opacity: 1;
+	}
 
-  0% {
-    -webkit-transform: translateY(1rem);
-    -webkit-opacity: 0;
-  }
+	0% {
+		-webkit-transform: translateY(1rem);
+		-webkit-opacity: 0;
+	}
 }
 
 .slideIn {
-  -webkit-animation-name: slideIn;
-  animation-name: slideIn;
+	-webkit-animation-name: slideIn;
+	animation-name: slideIn;
+}
+
+.absolute__middle {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+}
+
+.content__middle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.hexagon {
+	align-items: center;
+	background: linear-gradient(90deg, #FFCC21 0%, #FF963C 100%);
+
+	cursor: pointer;
+	display: flex;
+	fill: white;
+	height: var(--hex-height);
+	justify-content: center;
+	margin: var(--hex-border) 0;
+	position: relative;
+	transition: var(--hex-transition);
+	width: var(--hex-width);
+}
+
+.scrollTop__btn {
+	position: fixed;
+	right: 10em;
+	top: 50%;
+	cursor: pointer;
+	border-radius: 50%;
+	width: 48px;
+	height: 48px;
+	border: 1px solid #777777;
+	color: #777777
+}
+
+.loadMore__btn {
+	cursor: pointer;
+	border-radius: 5px;
+	margin: 0 auto;
+	width: 300px;
+	height: 56px;
+	background: linear-gradient(90deg, #FFCC21 0%, #FF963C 100%)
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #777777;
+	border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #FFCC21;
+	border-radius: 10px;
 }

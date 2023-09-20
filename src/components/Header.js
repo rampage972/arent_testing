@@ -51,7 +51,7 @@ export default function Header() {
 											</li>
 										)}
 										<li className="ps-3 pt-2 pb-2">
-											<Link to={item.url} key={key} className="text-decoration-none" style={{ color: "white" }}>
+											<Link to={item.url} key={key} className="text-decoration-none text-white">
 												{item.text}
 											</Link>
 										</li>

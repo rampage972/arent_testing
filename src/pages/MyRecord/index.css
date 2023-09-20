@@ -1,0 +1,117 @@
+.record__list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.record__container {
+    border: 24px solid #FFCC21;
+    width: max-content
+}
+
+.record__body {
+    filter: brightness(0.25);
+    width: 240px;
+    height: 240px;
+    overflow: hidden;
+    background-size: 100% 100% !important;
+}
+
+.record__container .content__text {
+    color: #FFCC21;
+    font-size: 25px;
+    line-height: 30px;
+    letter-spacing: 0.125px;
+    text-align: center;
+}
+
+.record__container .content__btn {
+    width: 160px;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    background: #FF963C;
+
+}
+
+.table__body {
+    padding: 16px 24px;
+}
+
+.table__content {
+    padding: 4px 24px;
+    max-height: 250px;
+    overflow-y: scroll;
+}
+
+.table__title {
+    color: white;
+}
+
+.table__title--text {
+    width: 96px;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.15000000596046448px;
+    text-align: left;
+
+}
+
+.table__title--date {
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: 0.10999999940395355px;
+    text-align: left;
+}
+
+.table__column {
+    border-bottom: 1px solid #777777;
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+.table__column__title {
+    font-family: Hiragino Kaku Gothic Pro;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 22px;
+    letter-spacing: 0.07500000298023224px;
+    text-align: left;
+}
+
+.table__column__calories {
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.07500000298023224px;
+    text-align: left;
+    color: #FFCC21;
+}
+
+.table__column__duration {
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.07500000298023224px;
+    text-align: left;
+    color: #FFCC21;
+
+}
+
+.diary__container {
+    border: 2px solid #707070
+}
+
+.diary__desc {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    max-height: 168px;
+    display: -webkit-box;
+}
+
+@media (max-width: 768px) {
+    .record__list {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
