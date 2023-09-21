@@ -30,16 +30,61 @@
     color: white;
     text-align: center;
     background: #FF963C;
-
 }
 
-.table__body {
+.record__chart__title {
+    position: absolute;
+    top: 10px;
+    z-index: 1;
+    left: 24px;
+}
+
+.record__chart__btn__container {
+    position: absolute;
+    bottom: 10px;
+    left: 24px;
+}
+
+.record__chart__btn__item {
+    margin-right: 16px;
+    height: 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #FFFFFF;
+    transition: 0.3s all ease-in-out;
+}
+
+.record__chart__btn__item.active {
+    background: #FFCC21;
+}
+
+.record__chart__btn__item.active .record__chart__btn__text {
+    color: white !important;
+}
+
+.record__chart__btn__text {
+    font-family: Hiragino Kaku Gothic Pro;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 22px;
+    letter-spacing: 0.07500000298023224px;
+    text-align: center;
+    color: #FFCC21;
     padding: 16px 24px;
 }
 
+.table__body {
+    padding: 16px 0 4px 24px;
+}
+
 .table__content {
+    padding: 4px 24px 20px 24px;
+}
+
+.table__content tbody {
+    display: block;
     padding: 4px 24px;
-    max-height: 250px;
+    max-height: 200px;
     overflow-y: scroll;
 }
 

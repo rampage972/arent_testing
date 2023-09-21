@@ -1,5 +1,4 @@
-import React from "react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Fade } from "react-reveal"
 import { Link, useLocation } from "react-router-dom"
 
@@ -22,6 +21,18 @@ export default function Header() {
 	const location = useLocation()
 	const [isOpenMenu, setIsOpenMenu] = useState(false)
 
+	useEffect(() => {
+		const handleClickOutside = (e) => {
+			if (e.target.id !== "dropDownEl") {
+				setIsOpenMenu(false)
+			}
+		}
+		document.addEventListener("click", handleClickOutside, true)
+		return () => {
+			document.removeEventListener("click", handleClickOutside, true)
+		}
+	}, [])
+
 	return (
 		<div style={{ backgroundColor: "#414141", height: 64 }}>
 			<div className="container">
@@ -31,7 +42,7 @@ export default function Header() {
 							<img src="/asset/image/logo.png" alt="" height={64} />
 						</Link>
 					</div>
-					<div className="col-md-7 d-flex justify-content-around align-items-center">
+					<div className="col-md-7 position-relative d-flex justify-content-between align-items-center">
 						{menuItems.map((item, key) => (
 							<Link to={item.url} key={key} className="text-decoration-none">
 								<img src={item.icon} alt="" className="me-2" />
@@ -40,25 +51,24 @@ export default function Header() {
 						))}
 						<div className="btn-group">
 							<Fade key={isOpenMenu}>
-								<img onClick={() => setIsOpenMenu(!isOpenMenu)} src={`/asset/image/${isOpenMenu ? "icon_close" : "icon_menu"}.png`} alt="" style={{ cursor: "pointer", transition: "0.3s ease-in-out" }} data-bs-toggle="dropdown" />
+								<img id="dropDownEl" onClick={() => setIsOpenMenu(!isOpenMenu)} src={`/asset/image/${isOpenMenu ? "icon_close" : "icon_menu"}.png`} alt="" style={{ cursor: "pointer", transition: "0.3s ease-in-out" }} />
 							</Fade>
-							<div className="dropdown-menu" style={{ backgroundColor: "#777777", width: 280 }}>
-								{dropdownItems.map((item, key) => (
-									<div key={key}>
-										{key !== 0 && (
-											<li>
-												<hr className="dropdown-divider" />
-											</li>
-										)}
-										<li className="ps-3 pt-2 pb-2">
-											<Link to={item.url} key={key} className="text-decoration-none text-white">
-												{item.text}
-											</Link>
-										</li>
-									</div>
-								))}
-							</div>
 						</div>
+						<Fade when={isOpenMenu}>
+							<div className="dropdown__menu__container" style={{ backgroundColor: "#777777", width: 280 }}>
+								<ul className="list-unstyled mb-0" style={{ listStyleType: "none" }}>
+									{dropdownItems.map((item, key) => (
+										<div key={key}>
+											<li className=" dropdown__menu__item">
+												<Link to={item.url} key={key} className="text-decoration-none text-white ">
+													{item.text}
+												</Link>
+											</li>
+										</div>
+									))}
+								</ul>
+							</div>
+						</Fade>
 					</div>
 				</div>
 			</div>
